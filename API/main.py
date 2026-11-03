@@ -15,7 +15,7 @@ def health():
 
 
 @app.get("/nouveau")
-def list_items():
+def nouveau():
     return {"status": "nouveau"} 
  
 @app.get("/items")
