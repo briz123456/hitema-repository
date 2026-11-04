@@ -1,0 +1,9 @@
+- hosts: localhost        # Sur quelle(s) machine(s) agir : ici ta machine (WSL)
+  connection: local       # Pas de SSH, on exécute directement en local
+  become: true            # Équivalent de "sudo" (élévation de privilèges)
+  tasks:                  # Liste des actions à réaliser
+    - name: Installer nginx    # Description lisible de la tâche (affichée à l'exécution)
+      apt:                     # Le "module" utilisé : gestionnaire de paquets Debian/Ubuntu
+        name: nginx            # Le paquet à gérer
+        state: present         # État voulu : "installé"
+        update_cache: true     # Fait un "apt update" avant d'installer
